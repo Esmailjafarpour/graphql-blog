@@ -19,24 +19,11 @@ const Header = () => {
                <Container maxWidth="lg">
                     <Toolbar>
 
-                         <IconButton
-                              size="large"
-                              edge="start"
-                              color="inherit"
-                              aria-label="menu"
-                              sx={{ mr: 2 }}
-                         >
-                         {/* <MenuIcon /> */}
-
-                         </IconButton>
-
-                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                         <Typography variant="h6" component="div" fontWeight="700" sx={{ flexGrow: 1 }}>
                               وبلاگ نادر
                          </Typography>
 
                          <MenuBookIcon/>
-
-                         <Button color="inherit">Login</Button>
 
                     </Toolbar> 
 

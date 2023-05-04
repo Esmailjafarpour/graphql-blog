@@ -1,4 +1,4 @@
-import './App.css';
+
 import { gql , useQuery } from "@apollo/client";
 import Header from "./components/layout/Header";
 
