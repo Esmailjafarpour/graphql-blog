@@ -11,7 +11,7 @@ import {
   Button
 } from "@mui/material";
 
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 const CardEl = ({ title, slug, coverPhoto, author }) => {
   console.log(author.name);
@@ -42,9 +42,9 @@ const CardEl = ({ title, slug, coverPhoto, author }) => {
         </CardContent>
         <Divider variant="middle" sx={{margin : "10px"}}/>
         <CardActions>
-          {/* <Link to={`/blogs/${slug}`} style={{textDecoration : "none" , width : "100%"}}> */}
+          <Link to={`/blogs/${slug}`} style={{textDecoration : "none" , width : "100%"}}>
                <Button variant="outlined" size="small" sx={{width : "100%" , borderRadius : 3}}>مطالعه ی مقاله</Button>
-          {/* </Link> */}
+          </Link>
         </CardActions>
       </Card>
     </div>
