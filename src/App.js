@@ -1,6 +1,7 @@
 
 import { gql , useQuery } from "@apollo/client";
 import Header from "./components/layout/Header";
+import HomePage from './components/home/HomePage';
 
 
 const QUERY = gql`
@@ -15,8 +16,11 @@ function App() {
   console.log(data)
 
   return (
-   
-    <Header/>
+    
+    <>
+      <Header/>
+      <HomePage/>
+    </>
   
   );
 }
