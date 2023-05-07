@@ -7,11 +7,13 @@ import {Container , Grid , Typography} from "@mui/material";
 
 import CardEl from "../../components/shared/CardEl";
 
+import Loader from "../Loader";
+
 const Blogs = () => {
 
      const {loading ,data ,errors} = useQuery(GET_BLOGS_INFO)
     
-     if(loading) return <h4>Loading ...</h4>
+     if (loading) return <Loader/>;
      if(errors) return <h4>Errors ...</h4>
      console.log(data)
      return (

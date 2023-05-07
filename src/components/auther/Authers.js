@@ -7,9 +7,11 @@ import { GET_AUTHORS_INFO } from "../../graphql/queries";
 
 import {Link} from "react-router-dom";
 
+import Loader from "../Loader";
+
 const Authers = () => {
   const { loading, data, errors } = useQuery(GET_AUTHORS_INFO);
-  if (loading) return <h3>Loading ...</h3>;
+  if (loading) return <Loader/>;
   if (errors) return <h3>Errors ...</h3>;
 
   const {authors} = data;
