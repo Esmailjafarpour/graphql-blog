@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import Container from '@mui/material/Container';
+import {Link} from "react-router-dom";
 
 
 const Header = () => {
@@ -20,10 +21,16 @@ const Header = () => {
                     <Toolbar>
 
                          <Typography variant="h6" component="div" fontWeight="700" sx={{ flexGrow: 1 }}>
-                              وبلاگ نادر
-                         </Typography>
 
-                         <MenuBookIcon/>
+                              <Link to="/" style={{textDecoration : "none" , color : "#fff"}}>  
+                                    وبلاگ نادر
+                              </Link>
+
+                         </Typography>
+                       
+                         <Link to="/" style={{ color : "#fff"}}>  
+                              <MenuBookIcon/>
+                         </Link>
 
                     </Toolbar> 
 

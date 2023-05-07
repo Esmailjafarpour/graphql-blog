@@ -9,12 +9,15 @@ import HomePage from './components/home/HomePage';
 import BlogPage from "./components/blogs/BlogPage";
 import AuthorPage from "./components/auther/AuthorPage";
 
+import ScrollToTop from "./components/shared/ScrollToTop";
+
 
 function App() {
 
   return (
 
       <Layout>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/blogs/:slug" element={<BlogPage/>}/>
