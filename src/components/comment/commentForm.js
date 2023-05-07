@@ -6,11 +6,13 @@ import { SEND_COMMENT } from "../../graphql/mutation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const CommentForm = ({ slug }) => {
   const [allState, setAllState] = useState({
     name: "",
     email: "",
     text: "",
+    pressed : false
   });
 
   const changeHandler = (event) =>
@@ -33,19 +35,30 @@ const CommentForm = ({ slug }) => {
   const sendHandler = () => {
     if (allState.name && allState.email && allState.text) {
       sendComment();
+      setAllState({
+          ...allState,
+          pressed : true
+      })
     } else {
       toast.warn("تمام فیلد ها را پر کنید", {
         position: "top-center",
-       
       });
+     
     }
   };
 
 
-  if (data) {
+  if (data && allState.pressed) {
      toast.success("کامنت ارسال شد و منتظر تایید می باشد", {
           position: "top-center",
         });
+         setAllState({
+          ...allState,
+          name: "",
+          email: "",
+          text: "",
+          pressed : false
+      })
   }
 
   return (
