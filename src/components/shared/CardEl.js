@@ -37,6 +37,7 @@ const CardEl = ({ title, slug, coverPhoto, author }) => {
           height="194"
           alt={slug}
           fontWeight={600}
+          style={{borderRadius : 15}}
         />
         <CardContent>
           <Typography component="h3" variant="h6" color="text.primary">
