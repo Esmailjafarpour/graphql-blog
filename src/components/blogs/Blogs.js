@@ -7,7 +7,7 @@ import {Container , Grid , Typography} from "@mui/material";
 
 import CardEl from "../../components/shared/CardEl";
 
-import Loader from "../Loader";
+import {Loader} from "../Loader";
 
 const Blogs = () => {
 

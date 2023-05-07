@@ -5,7 +5,7 @@ import { GET_AUTHOR_INFO } from "../../graphql/queries";
 import { Container, Grid, Typography, Avatar } from "@mui/material";
 import sanitizeHtml from "sanitize-html";
 import CardEl from "../shared/CardEl";
-import Loader from "../Loader";
+import {BarsLoader} from "../Loader";
 
 const AuthorPage = () => {
   const { slug } = useParams();
@@ -13,7 +13,7 @@ const AuthorPage = () => {
     variables: { slug },
   });
 
-  if (loading) return <Loader/>;
+  if (loading) return <BarsLoader/>;
   if (errors) return <h3>Errors ...</h3>;
 
   const { author : { name , field , avatar , description , posts} } = data
