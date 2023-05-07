@@ -1,22 +1,52 @@
 import React, { useState } from "react";
-import { Grid, Avatar, Typography, Divider ,Button } from "@mui/material";
+import { Grid, Avatar, Typography, Divider, Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import { useMutation } from "@apollo/client";
+import { SEND_COMMENT } from "../../graphql/mutation";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CommentForm = ({ slug }) => {
+  const [allState, setAllState] = useState({
+    name: "",
+    email: "",
+    text: "",
+  });
 
-  const [allState, setAllState] = useState({ 
-           name : '',
-           email : '',
-           text : ''
-     });
+  const changeHandler = (event) =>
+    setAllState({
+      ...allState,
+      [event.target.name]: event.target.value,
+    });
 
-   const changeHandler = (event) => (
-          setAllState({
-               ...allState,
-               [event.target.name] : event.target.value
-          }
-     ))
-    
+  const [sendComment, { loading, data, errors }] = useMutation(SEND_COMMENT, {
+    variables: {
+      name: allState.name,
+      email: allState.email,
+      text: allState.text,
+      slug,
+    },
+  });
+
+  console.log(data);
+
+  const sendHandler = () => {
+    if (allState.name && allState.email && allState.text) {
+      sendComment();
+    } else {
+      toast.warn("تمام فیلد ها را پر کنید", {
+        position: "top-center",
+       
+      });
+    }
+  };
+
+
+  if (data) {
+     toast.success("کامنت ارسال شد و منتظر تایید می باشد", {
+          position: "top-center",
+        });
+  }
 
   return (
     <Grid
@@ -44,9 +74,9 @@ const CommentForm = ({ slug }) => {
           id="outlined-basic"
           label="نام کاربری"
           variant="outlined"
-          sx={{ width: "100%"}}
+          sx={{ width: "100%" }}
           name="name"
-          onChange={(event)=> changeHandler(event)}
+          onChange={(event) => changeHandler(event)}
           value={allState.name}
         />
       </Grid>
@@ -57,7 +87,7 @@ const CommentForm = ({ slug }) => {
           variant="outlined"
           sx={{ width: "100%" }}
           name="email"
-          onChange={(event)=> changeHandler(event)}
+          onChange={(event) => changeHandler(event)}
           value={allState.email}
         />
       </Grid>
@@ -68,14 +98,24 @@ const CommentForm = ({ slug }) => {
           variant="outlined"
           sx={{ width: "100%" }}
           name="text"
-          onChange={(event)=> changeHandler(event)}
+          onChange={(event) => changeHandler(event)}
           value={allState.text}
           multiline
         />
       </Grid>
       <Grid xs={12} m={2}>
-          <Button variant="contained">ارسال</Button>
+        {loading ? (
+          <Button variant="contained" disabled>
+            {" "}
+            ... در حال ارسال
+          </Button>
+        ) : (
+          <Button variant="contained" onClick={sendHandler}>
+            ارسال
+          </Button>
+        )}
       </Grid>
+      <ToastContainer />
     </Grid>
   );
 };
