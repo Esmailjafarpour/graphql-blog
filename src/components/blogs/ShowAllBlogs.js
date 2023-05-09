@@ -22,7 +22,6 @@ const ShowAllBlogs = () => {
       <Grid
         item
         sx={{
-          border: "2px solid #0f978a",
           marginTop: "25px",
           borderRadius: "10px",
         }}
@@ -30,14 +29,14 @@ const ShowAllBlogs = () => {
         <Typography
           component="h2"
           variant="h5"
-          color="secondary"
+          color="#ffffff"
           sx={{
             textAlign: "center",
-            background: "#ccc",
+            background: "#810a95",
             width: "95%",
             margin: "4px auto",
             borderRadius: 8,
-            
+            padding: "5px 0",
           }}
         >
           وبلاگ ها
@@ -47,7 +46,8 @@ const ShowAllBlogs = () => {
       <Grid
         container
         spacing={3}
-        padding={3}
+        padding={2}
+        xs={12}
         mt={2}
         style={{
           boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px",
@@ -61,22 +61,24 @@ const ShowAllBlogs = () => {
         {data.posts.map((post) => (
           <Grid
             item
-            xs={5}
+            xs={12}
+            lg={3}
+            md={5}
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItem: "center",
-              backgroundColor : "#d3eae2",
+              backgroundColor: "#d3eae2",
               boxShadow: "rgba(0,0,0,0.1) 0px 10px 15px",
               margin: "5px",
               borderRadius: "12px",
-              padding: 2 ,
+              padding: 2,
             }}
           >
             <Typography
-              component="p"
-              variant="h5"
+              component="h5"
+              variant="p"
               color="secondary"
               sx={{
                 textAlign: "center",
@@ -84,7 +86,7 @@ const ShowAllBlogs = () => {
                 width: "80%",
                 margin: "10px auto",
                 borderRadius: 16,
-                padding: "2px",
+                padding: "10px 0",
               }}
             >
               {post.title}
@@ -93,7 +95,8 @@ const ShowAllBlogs = () => {
             <CardMedia
               component="img"
               image={post.coverPhoto.url}
-              height="220"
+              width="80%"
+              height="100%"
               alt={post.slug}
               fontWeight={600}
               style={{ borderRadius: 15 }}
