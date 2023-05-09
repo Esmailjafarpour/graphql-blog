@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Avatar, Typography, Divider, Button , Dialog  } from "@mui/material";
+import { Grid, Avatar, Typography, Divider, Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useMutation } from "@apollo/client";
 import { SEND_COMMENT } from "../../graphql/mutation";
