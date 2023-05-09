@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Grid, Avatar, Typography, Divider, Button } from "@mui/material";
+import { Grid, Avatar, Typography, Divider, Button , Dialog  } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useMutation } from "@apollo/client";
 import { SEND_COMMENT } from "../../graphql/mutation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RTL from "../../mui/RTL";
 
 
 const CommentForm = ({ slug }) => {
@@ -83,38 +84,44 @@ const CommentForm = ({ slug }) => {
       </Grid>
 
       <Grid item xs={12} m={2}>
-        <TextField
-          id="outlined-basic"
-          label="نام کاربری"
-          variant="outlined"
-          sx={{ width: "100%" }}
-          name="name"
-          onChange={(event) => changeHandler(event)}
-          value={allState.name}
-        />
+        <RTL>
+          <TextField
+              id="outlined-basic"
+              label="نام کاربری"
+              variant="outlined"
+              sx={{ width: "100%" }}
+              name="name"
+              onChange={(event) => changeHandler(event)}
+              value={allState.name}
+            />
+        </RTL>
       </Grid>
       <Grid item xs={12} m={2}>
-        <TextField
-          id="outlined-basic"
-          label="ایمیل"
-          variant="outlined"
-          sx={{ width: "100%" }}
-          name="email"
-          onChange={(event) => changeHandler(event)}
-          value={allState.email}
-        />
+        <RTL>
+          <TextField
+            id="outlined-basic"
+            label="ایمیل"
+            variant="outlined"
+            sx={{ width: "100%" }}
+            name="email"
+            onChange={(event) => changeHandler(event)}
+            value={allState.email}
+          />
+        </RTL>  
       </Grid>
       <Grid item xs={12} m={2}>
-        <TextField
-          id="outlined-basic"
-          label="متن گامنت"
-          variant="outlined"
-          sx={{ width: "100%" }}
-          name="text"
-          onChange={(event) => changeHandler(event)}
-          value={allState.text}
-          multiline
-        />
+        <RTL>
+          <TextField
+            id="outlined-basic"
+            label="متن کامنت"
+            variant="outlined"
+            sx={{ width: "100%" }}
+            name="text"
+            onChange={(event) => changeHandler(event)}
+            value={allState.text}
+            multiline
+          />
+        </RTL>
       </Grid>
       <Grid xs={12} m={2}>
         {loading ? (
