@@ -31,13 +31,14 @@ const ShowAllAuthors = () => {
             <Typography
               component="h2"
               variant="h5"
-              color="#d1b9e6"
+              color="#a53eff"
               sx={{
                 textAlign: "center",
                 background: "#ffffff",
                 width: "95%",
                 margin: "4px auto",
                 borderRadius: 8,
+                fontWeight : "700"
                 
               }}
             >

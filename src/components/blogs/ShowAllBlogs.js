@@ -32,7 +32,7 @@ const ShowAllBlogs = () => {
           color="#ffffff"
           sx={{
             textAlign: "center",
-            background: "#810a95",
+            background: "#37bfc6",
             width: "95%",
             margin: "4px auto",
             borderRadius: 8,
