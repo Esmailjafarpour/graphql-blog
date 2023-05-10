@@ -20,7 +20,7 @@ const BlogPage = () => {
 
   return (
     <Container maxWidth="lg">
-      <Grid container>
+      <Grid container mt={5}>
         <Grid item xs={12} mt={9} display="flex" justifyContent="space-between">
           <Typography
             component="h2"

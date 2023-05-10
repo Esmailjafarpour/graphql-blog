@@ -38,7 +38,7 @@ const Header = () => {
                 sx={{
                   flexGrow: 0.5,
                   display: "flex",
-                  justifyContent: "center",
+                  justifyContent: "end",
                 }}
               >
                 <Typography component="h6" variant="h6" fontWeight="700" px={1}>

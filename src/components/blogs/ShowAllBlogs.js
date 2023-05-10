@@ -18,12 +18,13 @@ const ShowAllBlogs = () => {
   if (loading) return <Loader />;
   if (errors) return <h4>errors ...</h4>;
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" mt={15}>
       <Grid
         item
         sx={{
-          marginTop: "25px",
+          marginTop: "100px",
           borderRadius: "10px",
+          
         }}
       >
         <Typography

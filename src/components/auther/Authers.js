@@ -10,7 +10,8 @@ import {Link} from "react-router-dom";
 import {Loader} from "../Loader";
 
 const Authers = () => {
-  const { loading, data, errors } = useQuery(GET_AUTHORS_INFO);
+
+  const {loading, data, errors } = useQuery(GET_AUTHORS_INFO);
   if (loading) return <Loader/>
   if (errors) return <h3>Errors ...</h3>;
 
@@ -19,7 +20,7 @@ const Authers = () => {
   return (
     <Grid
       container
-      style={{ boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}
+      style={{ boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 ,marginTop : 5 }}
     >
      {authors.map((author,index) => (
            <React.Fragment key={author.id}>
