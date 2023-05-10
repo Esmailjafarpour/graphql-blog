@@ -13,46 +13,66 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Box sx={{ flexGrow: 1 , position : "relative" }}>
+    <Box sx={{ flexGrow: 1, position: "relative" }}>
       <AppBar position="fixed">
         <Container maxWidth="lg" sx={{ backgroundColor: "secondary" }}>
           <Toolbar>
-            <Typography
-              variant="h6"
-              component="div"
-              fontWeight="700"
-              sx={{ flexGrow: 0.5 }}
-            >
-              <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-                وبلاگ نادر
-              </Link>
-            </Typography>
-
-            <Grid
-              sx={{ flexGrow: 0.5, display: "flex", justifyContent: "center" }}
-            >
-              <Typography component="h6" variant="h6" fontWeight="700" px={1}>
-                <Link
-                  to="/blogs"
-                  style={{ textDecoration: "none", color: "rgb(230, 199, 79)" }}
+            <Grid container spacing={2}>
+              <Grid item xs={12} lg={3} md={4} sm={12}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  fontWeight="700"
+                  sx={{ flexGrow: 0.5 }}
                 >
-                  وبلاگ ها
-                </Link>
-              </Typography>
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none", color: "#fff" }}
+                  >
+                    وبلاگ نادر
+                  </Link>
+                </Typography>
+              </Grid>
 
-              <Typography component="h6" variant="h6" fontWeight="700" px={1}>
-                <Link
-                  to="/authors"
-                  style={{ textDecoration: "none", color: "rgb(230, 199, 79)" }}
-                >
-                  نویسنده ها
+              <Grid item xs={12} lg={7} md={4} sm={12}
+                sx={{
+                  flexGrow: 0.5,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Typography component="h6" variant="h6" fontWeight="700" px={1}>
+                  <Link
+                    to="/blogs"
+                    style={{
+                      textDecoration: "none",
+                      color: "rgb(230, 199, 79)",
+                    }}
+                  >
+                    وبلاگ ها
+                  </Link>
+                </Typography>
+
+                <Typography component="h6" variant="h6" fontWeight="700" px={1}>
+                  <Link
+                    to="/authors"
+                    style={{
+                      textDecoration: "none",
+                      color: "rgb(230, 199, 79)",
+                    }}
+                  >
+                    نویسنده ها
+                  </Link>
+                </Typography>
+              </Grid>
+
+              <Grid item xs={12} lg={2} md={4} sm={12} display="flex" justifyContent="end">
+                <Link to="/" style={{ color: "#fff" }}>
+                  <MenuBookIcon />
                 </Link>
-              </Typography>
+              </Grid>
+
             </Grid>
-
-            <Link to="/" style={{ color: "#fff" }}>
-              <MenuBookIcon />
-            </Link>
           </Toolbar>
         </Container>
       </AppBar>
