@@ -4,7 +4,7 @@ import { Bars } from "react-loader-spinner";
 
 const Loader = () => {
   return (
-    <div style={{ width: "100%", textAlign: "center" }}>
+    <div style={{ width: "100%", textAlign: "center", marginTop:"100px" }}>
       <img src={spinner} alt="loading" />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_POST_COMMENTS } from "../../graphql/queries";
-import { Container, Grid, Typography, Avatar, Box } from "@mui/material";
+import { Grid, Typography, Avatar, Box } from "@mui/material";
 
 const Comments = ({ slug }) => {
   const { loading, data, errors } = useQuery(GET_POST_COMMENTS, {
@@ -9,6 +9,7 @@ const Comments = ({ slug }) => {
   });
 
   if(loading) return null;
+  if(errors) return <p>errors ...</p>;
 
   return (
     <Grid

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Avatar, Typography, Divider, Button } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useMutation } from "@apollo/client";
 import { SEND_COMMENT } from "../../graphql/mutation";
@@ -72,6 +72,8 @@ const CommentForm = ({ slug }) => {
       pressed: false,
     });
   }
+
+  if(errors) return <h1>errors ...</h1>
 
   return (
     <Grid

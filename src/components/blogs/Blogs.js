@@ -3,7 +3,7 @@ import React from 'react';
 import { useQuery } from "@apollo/client";
 import { GET_BLOGS_INFO } from "../../graphql/queries";
 
-import {Container , Grid , Typography} from "@mui/material";
+import { Grid } from "@mui/material";
 
 import CardEl from "../../components/shared/CardEl";
 

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { Loader } from "../Loader";
 import {
   Grid,
-  Avatar,
   Typography,
   Container,
   Button,
@@ -14,8 +13,7 @@ import {
 
 const ShowAllBlogs = () => {
   const { loading, data, errors } = useQuery(GET_BLOGS_INFO);
-  console.log("data", data);
-  if (loading) return <Loader />;
+  if (loading) return <Loader/>;
   if (errors) return <h4>errors ...</h4>;
   return (
     <Container maxWidth="lg" mt={2}>

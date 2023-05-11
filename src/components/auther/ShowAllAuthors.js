@@ -9,14 +9,13 @@ import {
      Typography,
      Container,
      Button,
-     CardMedia,
    } from "@mui/material";
 
 const ShowAllAuthors = () => {
 
      const {loading , data , errors} = useQuery(GET_AUTHORS_INFO)
      console.log("data",data)
-     if (loading) return <Loader />;
+     if (loading) return <Loader/>;
      if (errors) return <h4>errors ...</h4>;
      return (
           <Container maxWidth="lg">
