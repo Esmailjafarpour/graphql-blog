@@ -17,13 +17,14 @@ const Header = () => {
       <AppBar position="fixed">
         <Container maxWidth="lg" sx={{ backgroundColor: "secondary" }}>
           <Toolbar>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{display : "flex" , justifyContent : "center" , alignItems : "center" , margin :"5px 0"}}>
+
               <Grid item xs={12} lg={3} md={4} sm={12}>
                 <Typography
                   variant="h6"
                   component="div"
                   fontWeight="700"
-                  sx={{ flexGrow: 0.5 }}
+                  sx={{ flexGrow: 0.5}}
                 >
                   <Link
                     to="/"
@@ -38,7 +39,7 @@ const Header = () => {
                 sx={{
                   flexGrow: 0.5,
                   display: "flex",
-                  justifyContent: "end",
+                  justifyContent: "center",
                 }}
               >
                 <Typography component="h6" variant="h6" fontWeight="700" px={1}>
@@ -67,7 +68,7 @@ const Header = () => {
               </Grid>
 
               <Grid item xs={12} lg={2} md={4} sm={12} display="flex" justifyContent="end">
-                <Link to="/" style={{ color: "#fff" }}>
+                <Link to="/" style={{ color: "#fff"}}>
                   <MenuBookIcon />
                 </Link>
               </Grid>

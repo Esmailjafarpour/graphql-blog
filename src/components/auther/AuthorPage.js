@@ -20,7 +20,9 @@ const AuthorPage = () => {
 
   return (
     <Container maxWidth="lg">
-      <Grid container mt={15}>
+
+      <Grid container mt={25}>
+
         <Grid
           item
           xs={12}
@@ -28,14 +30,19 @@ const AuthorPage = () => {
           flexDirection="column"
           alignItems="center"
         >
-          <Avatar src={avatar.url} sx={{ width: 250, height: 250 }} />
+
+          <Avatar src={avatar.url} sx={{ width: 250, height: 250 }}/>
+
           <Typography component="h3" variant="h5" fontWeight={700} mt={4}>
             {name}
           </Typography>
+
           <Typography component="p" variant="h5" color="text.secondary" mt={2}>
             {field}
           </Typography>
+
         </Grid>
+
         <Grid item mt={5}>
           <div
             dangerouslySetInnerHTML={{
@@ -43,10 +50,13 @@ const AuthorPage = () => {
             }}
           ></div>
         </Grid>
+
         <Grid item xs={12} mt={6}>
+
           <Typography component="h3" variant="h5" fontWeight={700}>
             مقالات {name}
           </Typography>
+
           <Grid container spacing={2} mt={2}>
             {posts.map(post => (
               <Grid item key={post.id}  xs={12} md={4} sm={6}>
@@ -58,8 +68,11 @@ const AuthorPage = () => {
               </Grid>
             ))}
           </Grid>
+
         </Grid>
+
       </Grid>
+      
     </Container>
   );
 };

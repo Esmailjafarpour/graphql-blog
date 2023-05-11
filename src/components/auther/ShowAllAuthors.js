@@ -24,7 +24,7 @@ const ShowAllAuthors = () => {
             item
             sx={{
               border: "2px solid #d1b9e6",
-              marginTop: "100px",
+              marginTop: "170px",
               borderRadius: "10px",
             }}
           >

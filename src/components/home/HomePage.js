@@ -5,7 +5,7 @@ import Blogs from "../blogs/Blogs";
 
 const HomePage = () => {
      return (
-          <Container maxWidth="lg" sx={{marginTop : 5}}>
+          <Container maxWidth="lg" sx={{marginTop : 15}}>
 
                <Grid container spacing={2} padding={3}>
 
