@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams , useNavigate } from "react-router-dom";
 import { GET_POST_INFO } from "../../graphql/queries";
 import { BarsLoader } from "../Loader";
 import { Container, Grid, Typography, Avatar , Box } from "@mui/material";
